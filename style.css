@@ -1,0 +1,600 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 25px;
+  font-family: "Segoe UI", sans-serif;
+  color: white;
+  background:
+    radial-gradient(ellipse at top, #58101f, transparent 55%),
+    linear-gradient(135deg, #080408, #260611, #090509);
+  overflow-x: hidden;
+}
+
+.love-card {
+  width: 100%;
+  max-width: 540px;
+  padding: 40px 25px;
+  text-align: center;
+  background: rgba(28, 8, 18, 0.92);
+  border: 1px solid rgba(255, 90, 125, 0.4);
+  border-radius: 28px;
+  box-shadow: 0 0 45px rgba(255, 25, 80, 0.2);
+  animation: appear 1.2s ease;
+}
+
+.eyebrow {
+  color: #ff9caf;
+  font-size: 12px;
+  letter-spacing: 3px;
+  margin-bottom: 22px;
+}
+
+.heart {
+  font-size: 82px;
+  margin-bottom: 18px;
+  filter: drop-shadow(0 0 18px #ff174f);
+  animation: heartbeat 1.5s infinite;
+}
+
+h1 {
+  font-family: Georgia, serif;
+  font-size: clamp(36px, 9vw, 55px);
+  color: #ffb4c4;
+  text-shadow: 0 0 22px #e91e63;
+  margin-bottom: 20px;
+}
+
+.intro {
+  color: #f5dce4;
+  font-size: 17px;
+  line-height: 2;
+  margin-bottom: 28px;
+}
+
+button {
+  border: none;
+  border-radius: 30px;
+  padding: 15px 23px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  color: white;
+  background: linear-gradient(120deg, #ff174f, #9b124b);
+  box-shadow: 0 0 22px rgba(255, 23, 79, 0.35);
+  transition: 0.3s ease;
+}
+
+button:hover {
+  transform: translateY(-3px) scale(1.04);
+  box-shadow: 0 0 32px rgba(255, 23, 79, 0.7);
+}
+
+.secret {
+  margin-top: 30px;
+  padding: 22px 15px;
+  border-radius: 18px;
+  background: rgba(255, 45, 95, 0.08);
+  border: 1px solid rgba(255, 130, 155, 0.3);
+}
+
+.secret h2 {
+  color: #ff9caf;
+  font-family: Georgia, serif;
+  margin-bottom: 20px;
+}
+
+.poem {
+  color: #ffe1e8;
+  font-size: 16px;
+  line-height: 2.2;
+}
+
+.signature {
+  margin-top: 22px;
+  font-size: 20px;
+  color: #ff9caf;
+}
+
+.hidden {
+  display: none;
+}
+
+.music-btn {
+  display: block;
+  margin: 24px auto 0;
+  background: transparent;
+  border: 1px solid #ff718f;
+  box-shadow: none;
+}
+
+.footer {
+  margin-top: 28px;
+  color: #c5a5b0;
+  font-size: 12px;
+}
+
+@keyframes heartbeat {
+  0%, 100% {
+    transform: scale(1) rotateY(0deg);
+  }
+  25% {
+    transform: scale(1.13) rotateY(12deg);
+  }
+  50% {
+    transform: scale(1) rotateY(0deg);
+  }
+  75% {
+    transform: scale(1.1) rotateY(-12deg);
+  }
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 480px) {
+  .love-card {
+    padding: 32px 18px;
+  }
+
+  .poem {
+    font-size: 15px;
+  }
+
+  button {
+    max-width: 100%;
+  }
+}
+
+/* Floating romantic hearts */
+body::before,
+body::after {
+  content: "❤️       🌹       💗       ❤️";
+  position: fixed;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 22px;
+  letter-spacing: 18px;
+  opacity: 0.55;
+  pointer-events: none;
+  z-index: 0;
+  animation: floatingRoses 12s linear infinite;
+}
+
+body::before {
+  top: 100%;
+}
+
+body::after {
+  top: 100%;
+  animation-delay: 6s;
+}
+
+.love-card {
+  position: relative;
+  z-index: 1;
+}
+
+.heart {
+  transform-style: preserve-3d;
+  filter:
+    drop-shadow(0 0 12px #ff174f)
+    drop-shadow(0 0 28px #ff174f);
+}
+
+@keyframes floatingRoses {
+  from {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0;
+  }
+
+  15% {
+    opacity: 0.65;
+  }
+
+  to {
+    transform: translateY(-120vh) rotate(25deg);
+    opacity: 0;
+  }
+}
+
+/* Romantic glowing effects */
+body {
+  overflow-x: hidden;
+}
+
+.love-card {
+  box-shadow:
+    0 0 20px rgba(255, 0, 70, 0.25),
+    0 0 50px rgba(255, 0, 70, 0.12);
+  animation: cardGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes cardGlow {
+  from {
+    box-shadow: 0 0 18px rgba(255, 0, 70, 0.2);
+  }
+  to {
+    box-shadow: 0 0 38px rgba(255, 0, 70, 0.5);
+  }
+}
+
+.heart {
+  filter: drop-shadow(0 0 12px #ff174f);
+  animation: heartBeat 1.5s ease-in-out infinite;
+}
+
+@keyframes heartBeat {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.12);
+  }
+}
+
+/* Magical romantic background */
+body {
+  background-image:
+    radial-gradient(circle at 15% 25%, rgba(255, 0, 70, 0.16) 0 2px, transparent 4px),
+    radial-gradient(circle at 80% 65%, rgba(255, 80, 120, 0.14) 0 2px, transparent 5px),
+    radial-gradient(circle at 50% 85%, rgba(255, 0, 70, 0.12) 0 2px, transparent 4px);
+  background-size: 180px 180px, 230px 230px, 150px 150px;
+  animation: magicalBackground 12s linear infinite;
+}
+
+@keyframes magicalBackground {
+  0% {
+    background-position: 0 0, 0 0, 0 0;
+  }
+  100% {
+    background-position: 180px 180px, -230px 230px, 150px -150px;
+  }
+}
+
+.love-card {
+  backdrop-filter: blur(8px);
+}
+
+/* Restore the original dark romantic background */
+body {
+  background-color: #10030a !important;
+  background-image:
+    radial-gradient(ellipse at top, #3b071b 0%, #18040d 48%, #080208 100%) !important;
+  color: #fff0f5;
+  overflow-x: hidden;
+}
+
+.love-card {
+  background: rgba(39, 12, 25, 0.96) !important;
+  border: 1px solid rgba(255, 70, 120, 0.6);
+  box-shadow:
+    0 0 25px rgba(255, 20, 80, 0.3),
+    0 0 55px rgba(255, 20, 80, 0.15);
+  backdrop-filter: blur(8px);
+}
+
+.intro,
+.poem,
+.footer {
+  color: #ffe0eb;
+}
+
+/* Smooth black-red romantic background */
+html {
+  min-height: 100%;
+  background: #100008;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  background:
+    radial-gradient(ellipse at 50% 35%,
+      #39091c 0%,
+      #1c0611 42%,
+      #080207 100%) !important;
+  background-attachment: fixed !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+}
+
+.love-card {
+  background: rgba(42, 14, 27, 0.96) !important;
+  border: 1px solid rgba(255, 60, 110, 0.65);
+  box-shadow:
+    0 0 25px rgba(255, 20, 80, 0.25),
+    0 0 60px rgba(255, 20, 80, 0.18);
+}
+
+/* Extra romantic red glow */
+body {
+  background:
+    radial-gradient(ellipse at 50% 45%,
+      rgba(110, 0, 35, 0.45) 0%,
+      rgba(35, 0, 15, 0.7) 45%,
+      #080207 100%) !important;
+  background-attachment: fixed !important;
+}
+
+.love-card {
+  box-shadow:
+    0 0 20px rgba(255, 0, 65, 0.28),
+    0 0 45px rgba(255, 0, 65, 0.18),
+    0 0 80px rgba(255, 0, 65, 0.08);
+}
+
+/* Soft glowing romantic stars */
+body::before {
+  content: "✦      ·       ✧       ·       ✦       ·       ✧";
+  position: fixed;
+  top: 8%;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  color: #ff8eae;
+  font-size: 18px;
+  letter-spacing: 12px;
+  opacity: 0.55;
+  pointer-events: none;
+  animation: starTwinkle 3s ease-in-out infinite alternate;
+  z-index: 0;
+}
+
+@keyframes starTwinkle {
+  from {
+    opacity: 0.2;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0.8;
+    transform: translateY(8px);
+  }
+}
+
+.love-card {
+  position: relative;
+  z-index: 1;
+}
+
+/* Premium romantic surprise button */
+#surpriseBtn {
+  background: linear-gradient(135deg, #ff174f, #d00055, #ff3d7f);
+  color: white;
+  border: 1px solid rgba(255, 180, 205, 0.35);
+  border-radius: 50px;
+  box-shadow:
+    0 0 12px rgba(255, 0, 75, 0.45),
+    0 0 28px rgba(255, 0, 75, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#surpriseBtn:hover {
+  transform: translateY(-3px) scale(1.04);
+  box-shadow:
+    0 0 18px rgba(255, 0, 75, 0.7),
+    0 0 40px rgba(255, 0, 75, 0.4);
+}
+
+#surpriseBtn:active {
+  transform: scale(0.97);
+}
+
+/* Romantic poem reveal animation */
+#secret {
+  transform-origin: top center;
+}
+
+#secret:not(.hidden) {
+  animation: romanticReveal 1.2s ease both;
+}
+
+@keyframes romanticReveal {
+  from {
+    opacity: 0;
+    transform: translateY(25px) scale(0.97);
+    filter: blur(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+#secret h2 {
+  text-shadow: 0 0 12px rgba(255, 50, 110, 0.55);
+}
+
+#secret .poem {
+  line-height: 1.9;
+}
+
+/* Secret message styling */
+#noteBtn {
+  margin-top: 18px;
+  padding: 12px 20px;
+  border: 1px solid #ff4f85;
+  border-radius: 30px;
+  color: white;
+  background: linear-gradient(135deg, #8f0035, #ff174f);
+  box-shadow: 0 0 15px rgba(255, 23, 79, 0.25);
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#noteBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 25px rgba(255, 23, 79, 0.5);
+}
+
+#noteMessage {
+  margin-top: 18px;
+  color: #ffe0eb;
+  line-height: 1.9;
+}
+
+.note-reveal {
+  animation: romanticReveal 1s ease both;
+}
+
+/* Floating 3D-style hearts */
+body::after {
+  content: "♥      ♥       ♥";
+  position: fixed;
+  left: 0;
+  bottom: -50px;
+  width: 100%;
+  color: rgba(255, 35, 95, 0.28);
+  font-size: 30px;
+  letter-spacing: 45px;
+  text-align: center;
+  pointer-events: none;
+  z-index: 0;
+  animation: floatingHeartRise 12s linear infinite;
+}
+
+@keyframes floatingHeartRise {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(-110vh) rotate(18deg);
+    opacity: 0;
+  }
+}
+/* Romantic Music Button Glow */
+.music-btn {
+  background: linear-gradient(135deg, #4b001c, #b0003a, #ff174f);
+  color: #fff;
+  border: 1px solid #ff6b98;
+  border-radius: 50px;
+  padding: 12px 22px;
+  box-shadow:
+    0 0 12px rgba(255, 23, 79, 0.4),
+    0 0 28px rgba(255, 23, 79, 0.2);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  animation: musicGlow 2s ease-in-out infinite alternate;
+}
+
+.music-btn:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 0 20px rgba(255, 23, 79, 0.7),
+    0 0 40px rgba(255, 23, 79, 0.4);
+}
+
+@keyframes musicGlow {
+  from {
+    box-shadow: 0 0 8px rgba(255, 23, 79, 0.3);
+  }
+  to {
+    box-shadow: 0 0 22px rgba(255, 23, 79, 0.65);
+  }
+}
+
+/* Mobile-Friendly Romantic Website */
+@media screen and (max-width: 600px) {
+  body {
+    padding: 12px;
+    overflow-x: hidden;
+  }
+
+  .love-card {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 22px 16px;
+    margin: 12px auto;
+  }
+
+  .intro {
+    font-size: 16px;
+    line-height: 1.8;
+    overflow-wrap: break-word;
+  }
+
+  #secret h2 {
+    font-size: 24px;
+    line-height: 1.5;
+  }
+
+  #secret .poem {
+    font-size: 15px;
+    line-height: 1.9;
+    overflow-wrap: break-word;
+  }
+
+  .signature,
+  #noteMessage,
+  .footer {
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  #surpriseBtn,
+  .music-btn,
+  #noteBtn {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 13px 12px;
+    margin: 16px auto;
+    font-size: 15px;
+    white-space: normal;
+    overflow-wrap: break-word;
+  }
+
+  body::before {
+    letter-spacing: 5px;
+    font-size: 14px;
+  }
+
+  body::after {
+    letter-spacing: 15px;
+    font-size: 22px;
+  }
+}
+/* Smooth scrolling for mobile */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 20px;
+}
+
+#secret {
+  scroll-margin-top: 20px;
+}
+
+/* Respect mobile users who prefer less animation */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  #secret:not(.hidden) {
+    animation: none;
+  }
+}
